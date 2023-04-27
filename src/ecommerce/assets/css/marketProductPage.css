@@ -1,0 +1,99 @@
+.product-card-page {
+    display: flex;
+    margin-top: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.product-page-image {
+    width: 40%;
+    border-radius: 15px;
+    object-fit: contain;
+    animation: fadeInLeft .3s;
+}
+.actions {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.buy-btn {
+    background-color: rgb(78, 118, 165);
+    letter-spacing: 1px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color .5s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    z-index: 10;
+}
+.buy-btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: rgb(59, 95, 136);
+    transition: background-color .5s, width .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.buy-btn:hover::after {
+    width: 100%;
+}
+.buy-btn i {
+    padding: 10px;
+}
+.text-shipping {
+    text-align: start;
+    color: rgb(5, 155, 5);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.text-shipping i {
+    margin: 0 15px 0 0;
+    font-size: 20px;
+}
+.official-shop {
+    text-align: start;
+    font-size: 23px;
+    margin: 0 0 20px 0;
+}
+.official-shop span {
+    color: #07f;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.product-stock-disponible {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: start;
+}
+
+.product-info {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    gap: 15%;
+    justify-content: center;
+}
+.text-muted {
+    color: #918989;
+    font-size: 14px;
+}
+.product-name-text {
+    font-size: 40px;
+}
+.product-card-page {
+    margin: 25px 10px;
+}
+.product-price-text {
+    font-weight: lighter;
+    margin-top: 30px;
+    font-size: 35px;
+}
+.product-info {
+    animation: fadeInRight .5s ;
+}
