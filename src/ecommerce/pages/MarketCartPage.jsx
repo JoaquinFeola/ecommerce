@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import '../assets/css/marketCart.css';
 import { EcommerceContext } from '../../context';
 import { Link } from 'react-router-dom';
+import { ProductInCartCard } from '../components/ProductInCartCard';
 
 const Message = () => {
   return (
@@ -22,7 +23,16 @@ export const MarketCartPage = () => {
         (ProductsCart.length === 0) && <Message />
       }
       <div className="market-cart-container">
-        <div className="cart-content"></div>
+        <div className="cart-content">
+          {
+            ProductsCart.map((product) => (
+              <ProductInCartCard 
+                product={ product }
+                key={product.id}
+              />
+            ))
+          }
+        </div>
         <div className="pay-methods"></div>
         <div className="total-purchase"></div>
       </div>

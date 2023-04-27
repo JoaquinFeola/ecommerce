@@ -1,20 +1,26 @@
 import { useParams } from "react-router-dom";
 import { getProductsById } from "../helpers/getProductsById";
 import '../assets/css/marketProductPage.css';
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useContext } from "react";
+import { EcommerceContext } from "../../context";
 
 export const MarketProductPage = () => {
 
   const { productId } = useParams();
   const product = getProductsById(productId) || {};
+  const { onProductAddToCart, ProductsCart } = useContext(EcommerceContext);
+  const isExist = ProductsCart.findIndex((producto) => producto.id === product.id);
+
   return (
     <div className="product-card-page">
-      <LazyLoadImage
-        src={product.image}
+
+      <img
+        src={`/assets/products_images/${product.image}.webp`}
         className="product-page-image animate__animated animate__fadeInLeft"
         alt={product.name}
-      >
-      </LazyLoadImage>
+      
+      />
+
       <div className="product-info animate__animated animate__fadeInRight">
         <div className="page-info">
           <h4 className="product-name-text">{product.name}</h4>
@@ -37,9 +43,13 @@ export const MarketProductPage = () => {
             <button className="buy-btn">
               Comprar ahora
             </button>
-            <button className="buy-btn">
+            <button className="buy-btn" onClick={ () => onProductAddToCart(product) }>
               <i className="bi bi-cart"></i>
-              Agregar al carrito
+              {
+                  (isExist === -1) // is false?
+                    ? 'Agregar al carrito' 
+                    : 'Agregado'
+              }
             </button>
           </div>
         </div>

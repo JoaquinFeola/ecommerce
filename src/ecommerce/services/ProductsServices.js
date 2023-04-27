@@ -7,7 +7,7 @@ export const Products = [
         brand: 'apple',
         stock: 50,
         amount: 1,
-        image: '/assets/products_images/iphonex.webp'
+        image: 'iphonex'
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ export const Products = [
         price: 2400,
         stock: 412,
         amount: 1,
-        image: '/assets/products_images/MacBookPro.webp'
+        image: 'MacBookPro'
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ export const Products = [
         stock: 15,
         amount: 1,
         brand: 'apple',
-        image: '/assets/products_images/Iphone12Pro.webp'
+        image: 'Iphone12Pro'
     },
     {
         id: 4,
@@ -34,7 +34,7 @@ export const Products = [
         stock: 10,
         brand: 'apple',
         amount: 1,
-        image: '/assets/products_images/Iphone14ProMax.webp'
+        image: 'Iphone14ProMax'
     }
 
 ]

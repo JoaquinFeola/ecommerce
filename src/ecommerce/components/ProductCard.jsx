@@ -21,13 +21,12 @@ export const ProductCard = ({ product }) => {
       onMouseEnter={() => onCardHover('enter')}
       onMouseLeave={() => onCardHover('leave')}
     >
-      <LazyLoadImage
-        effect="blur"
-        src={product.image}
+
+      <img
+        src={`/assets/products_images/${product.image}.webp`}
         className="product-card-image"
         alt={product.name}
-      >
-      </LazyLoadImage>
+      />
       <div className="product__card-body">
         <h3>$ {product.price}</h3>
         {
