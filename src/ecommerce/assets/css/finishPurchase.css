@@ -11,6 +11,7 @@
     transition: transform .5s;
     display: flex;
     flex-direction: column;
+
 }
 img {
     width: 80px;
@@ -30,6 +31,51 @@ img {
     width: 100%;
     min-height: 400px;
     box-shadow: 0 0 10px #000;
+}
+.card__expiration {
+    text-align: center;
+}
+.front__card {
+    gap: 20px 0px;
+}
+.card_name-container {
+    display: flex;
+    justify-content: space-between;
+}
+.text-principal {
+    color: #b19d9d;
+    font-size: 22px;
+}   
+.magnetic-band {
+    width: 103%;
+    position: relative;
+    left: -1.5%;
+    height: 50px;
+    background-color: #000;
+}
+.text-card-numbers {
+    letter-spacing: 3px;
+}
+
+.open-form-btn-container {
+    display: flex;
+    justify-content: center;
+}
+.open-form-btn-container  > button {
+    background-color: rgb(70, 70, 202);
+    font-size: 30px;
+    border: none;
+    border-radius: 100%;
+    color: #fff;
+    margin-top: -23px;
+    padding: 5px;
+    cursor: pointer;
+    /* border-radius: 100%; */
+    line-height: 30px;
+}
+.text-value {
+    color: #fff;
+    font-size: 24px;
 }
 .visa__img {
     display: flex;

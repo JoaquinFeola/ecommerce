@@ -15,17 +15,17 @@ export const FinishPurchasePage = () => {
             <img src="/assets/visa.png" alt="visa image" className='card-img' />
           </div>
           <div className="card__number">
-            <p>Número tarjeta</p>
-            <p>1232 3423 3232</p>
+            <p className='text-principal'>Número tarjeta</p>
+            <p className='text-value text-card-numbers'>1232 3423 3232 2323</p>
           </div>
           <div className="card_name-container">
             <div className='first'>
-              <p>Nombre tarjeta</p>
-              <p>Joaquin robloxiano</p>
+              <p className='text-principal'>Nombre tarjeta</p>
+              <p className='text-value'>Hugues Antoine de la Baudry</p>
             </div>
             <div className="card__expiration">
-              <p>Expiración</p>
-              <p>12/24</p>
+              <p className='text-principal expiration'>Expiración</p>
+              <p className='text-value'>12/24</p>
             </div>
           </div>
         </div>
@@ -34,6 +34,12 @@ export const FinishPurchasePage = () => {
           <div className="security-code-more-container">
             atras
           </div>
+        </div>
+        <div className="open-form-btn-container">
+          <button className='open-form-btn'>
+            <i className='bi bi-plus'></i>
+          </button>
+
         </div>
       </div>
     </>
