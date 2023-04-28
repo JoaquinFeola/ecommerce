@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import '../assets/css/marketCart.css';
 import { EcommerceContext } from '../../context';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ProductInCartCard } from '../components/ProductInCartCard';
 
 const Message = () => {
@@ -16,9 +16,13 @@ const Message = () => {
 }
 export const MarketCartPage = () => {
   const { ProductsCart } = useContext(EcommerceContext);
-
+  const totalCartPrice = ProductsCart.map((product) => product.price);
+  const navigate = useNavigate();
+  const finalizePurchase = () => {
+    navigate('/finalizePurchase');
+  }
   return (
-    <>
+    <div className='cart-page'>
       {
         (ProductsCart.length === 0) && <Message />
       }
@@ -26,16 +30,36 @@ export const MarketCartPage = () => {
         <div className="cart-content">
           {
             ProductsCart.map((product) => (
-              <ProductInCartCard 
-                product={ product }
+              <ProductInCartCard
+                product={product}
                 key={product.id}
               />
             ))
           }
         </div>
         <div className="pay-methods"></div>
-        <div className="total-purchase"></div>
+        {
+          (ProductsCart.length === 0)
+            ? null
+            : (
+              <>
+                <div className="total-purchase">
+                  <div className="total">
+                    <p>Total:</p>
+                    <div className="total-purchase-title-container">
+                      <h3>
+                        €: {totalCartPrice.reduce((prev, current) => prev + current, 0)}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="finish-purchase">
+                    <button onClick={finalizePurchase} className='btn-finalizar'>Finalizar compra</button>
+                  </div>
+                </div>
+              </>
+            )
+        }
       </div>
-    </>
+    </div>
   )
 }

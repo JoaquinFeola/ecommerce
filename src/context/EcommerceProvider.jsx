@@ -13,13 +13,37 @@ const initProductsCart = () => {
 
 export const EcommerceProvider = ({ children }) => {
   const [ ProductsCart, dispatchProductsCart ] = useReducer( ecommerceReducer,[], initProductsCart) 
+  // products cart methods
   const onProductAddToCart = ( product = {} ) => {
     const action = {
       type: ACTION_TYPES.addProduct,
-      payload: product
+      payload: product,
     };
     dispatchProductsCart(action);
   };
+  const onProductAddAmount = (product) => {
+    const action = {
+      type: ACTION_TYPES.addAmount,
+      payload: product,
+    };
+    dispatchProductsCart(action)
+  };
+  const onProductSubstractAmount = (product) => {
+    const action = {
+      type: ACTION_TYPES.substractAmount,
+      payload: product,
+    };
+    dispatchProductsCart(action);
+  }
+
+  const onProductRemove = (product = {}) => {
+    const action = {
+      type: ACTION_TYPES.deleteProduct,
+      payload: product,
+    };
+    dispatchProductsCart(action)
+  }
+  // -----------------------------------------
   
   useEffect(() => {
     localStorage.setItem('PRODUCTS__ARR', JSON.stringify(ProductsCart));
@@ -30,6 +54,9 @@ export const EcommerceProvider = ({ children }) => {
       ProductsCart,
       // methods
       onProductAddToCart,
+      onProductRemove,
+      onProductAddAmount,
+      onProductSubstractAmount,
     }}>
         { children }
     </EcommerceContext.Provider>

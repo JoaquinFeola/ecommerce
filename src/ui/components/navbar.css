@@ -11,10 +11,21 @@
 
 li {
     list-style: none;
+    padding: 5px;
 }
 .navbar-items {
     display: flex;
     gap: 5px;
+}
+.badge {
+    background-color: #a05a5a;
+    padding: 5px;
+    color: #fff;
+
+    font-weight: bold;
+    padding: 3px 10px;
+    margin: 0 10px;
+    border-radius: 10px;
 }
 
 .navbar-link.active {
@@ -25,7 +36,7 @@ li {
 } 
 .navbar-link {
     transition: color .6s, background-color .86s;
-    padding: 8px;
+    padding: 10px;
     color: #000;
     border-radius: 10px;
     text-decoration: none;

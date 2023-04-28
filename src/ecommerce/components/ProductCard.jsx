@@ -16,7 +16,7 @@ export const ProductCard = ({ product }) => {
 
   return (
     <div
-      className="product-card"
+      className="product-card animate__animated animate__fadeIn"
       onClick={onCardClick}
       onMouseEnter={() => onCardHover('enter')}
       onMouseLeave={() => onCardHover('leave')}

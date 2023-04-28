@@ -8,9 +8,9 @@ import './index.css';
 const root = createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-        <React.StrictMode>
+        {/* <React.StrictMode> */}
             <EcommerceApp/>
-        </React.StrictMode>    
+        {/* </React.StrictMode>     */}
     </BrowserRouter>
 )
 

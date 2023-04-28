@@ -3,6 +3,7 @@ import { Navbar } from "../../ui/components/Navbar"
 import { MartketPlace } from "../pages/MartketPlacePage"
 import { MarketProductPage } from "../pages/MarketProductPage"
 import { MarketCartPage } from "../pages/MarketCartPage"
+import { FinishPurchasePage } from "../pages/FinishPurchasePage"
 
 export const EcommerceRoutes = () => {
   return (
@@ -16,6 +17,10 @@ export const EcommerceRoutes = () => {
             <Route
               path="/cart"
               element={ <MarketCartPage /> }
+            />
+            <Route
+              path="finalizePurchase"
+              element={<FinishPurchasePage />}
             />
             <Route 
               path="/products/:productId" 

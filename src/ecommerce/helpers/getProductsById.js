@@ -1,7 +1,7 @@
-import { Products } from "../services/ProductsServices"
+import { ProductsServices } from "../services/ProductsCartServices";
 
 export const getProductsById = ( id ) => {
     const newId = parseInt(id);
-    return Products.find((product) => product.id === newId);
+    return ProductsServices.find((product) => product.id === newId);
 
 };

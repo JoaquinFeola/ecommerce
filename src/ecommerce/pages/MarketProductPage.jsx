@@ -44,7 +44,8 @@ export const MarketProductPage = () => {
               Comprar ahora
             </button>
             <button className="buy-btn" onClick={ () => onProductAddToCart(product) }>
-              <i className="bi bi-cart"></i>
+              <i className="bi bi-
+              cart"></i>
               {
                   (isExist === -1) // is false?
                     ? 'Agregar al carrito' 
