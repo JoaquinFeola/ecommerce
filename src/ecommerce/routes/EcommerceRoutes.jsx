@@ -18,10 +18,6 @@ export const EcommerceRoutes = () => {
               path="/cart"
               element={ <MarketCartPage /> }
             />
-            <Route
-              path="finalizePurchase"
-              element={<FinishPurchasePage />}
-            />
             <Route 
               path="/products/:productId" 
               element={ <MarketProductPage /> }

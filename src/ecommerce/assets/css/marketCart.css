@@ -44,6 +44,7 @@
 .cart-content {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 .message a:hover {
     background: #7121dad2;
